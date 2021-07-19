@@ -4,7 +4,6 @@
 }
 section{
     min-height: 640px;
-    padding-top: 5rem;
 }
 html{
     scroll-behavior: smooth;
