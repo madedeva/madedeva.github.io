@@ -1,0 +1,24 @@
+.jumbotron{
+    background-image: url(img/thumbs/5.png);
+    background-size: cover;
+}
+section{
+    min-height: 640px;
+    padding-top: 5rem;
+}
+html{
+    scroll-behavior: smooth;
+}
+@media (min-width: 992px) {
+    .nav-link{
+        margin-right: 30px;
+    }
+    .nav-link:hover::after{
+        content: '';
+        display: block;
+        border-bottom: 2px solid #faebd7;
+        width: 50%;
+        margin: auto;
+        margin-bottom: -2px;
+    }
+}
