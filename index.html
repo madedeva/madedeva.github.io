@@ -157,25 +157,35 @@
                       </ul>
                 </div>
                 <div class="col-lg-6" data-aos="fade-down" data-aos-delay="200">
-                    <form>
+                  <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+                    <strong>Thank You!</strong> Your message has been sent.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                    <form name="dev-clouds-messages">
                         <div class="form-group">
                           <label for="nama">Name</label>
-                          <input type="text" class="form-control" id="nama">
+                          <input type="text" class="form-control" id="nama" name="nama">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email">
+                            <input type="email" class="form-control" id="email" name="email">
                           </div>
                           <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="text" class="form-control" id="phone">
+                            <input type="number" class="form-control" id="phone" name="phone">
                           </div>
                         <div class="form-group">
                             <label for="phone">Messages</label>
                             <textarea name="pesan" id="pesan" class="form-control" ></textarea>
                         </div>
                         <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Send Messages</button>
+                                <button type="submit" class="btn btn-primary btn-kirim">Send Messages</button>
+                                <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                                  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                  Loading...
+                                </button>
                               </div>
                           </div>
                       </form>
@@ -205,6 +215,32 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <script src="js/script.js"></script>
+        <script>
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbwaUaJk93RiIQgBDgIW0KaIgws3_sTYtImhL-QyVkBeZwM7ToIbKg2WsHfeuLwOqdU/exec'
+          const form = document.forms['dev-clouds-messages']
+          const btnKirim = document.querySelector('.btn-kirim');
+          const btnLoading = document.querySelector('.btn-loading');
+          const myAlert = document.querySelector('.my-alert');
+        
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            //submit
+            //tampil tombol loading
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => {
+                //tampil tombol kirim
+                btnLoading.classList.toggle('d-none');
+                btnKirim.classList.toggle('d-none');
+                //tampil alert
+                myAlert.classList.toggle('d-none');
+                //reset form
+                form.reset();
+                console.log('Success!', response)
+            })
+              .catch(error => console.error('Error!', error.message))
+          })
+        </script>
     </body>
     </html>
