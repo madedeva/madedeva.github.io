@@ -24,6 +24,8 @@
         <title>Dev Cloud</title>
     </head>
     <body class="body" id="home">
+
+        <div class="preloader" id="preloader"></div>
     
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -229,5 +231,17 @@
               .catch(error => console.error('Error!', error.message))
           })
         </script>
+
+        <script>
+
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function(){
+
+                loader.style.display="none";
+
+            })
+
+        </script>
+
     </body>
     </html>

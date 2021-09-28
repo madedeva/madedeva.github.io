@@ -17,3 +17,11 @@ html{
         margin-right: 30px;
     }
 }
+
+#preloader{
+    background: #fff url(img/loader.gif) no-repeat center center;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+}
