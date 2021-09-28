@@ -2,6 +2,7 @@
     <html lang="en">
     <head>
         <!-- Required meta tags -->
+        
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,6 +24,8 @@
         <title>Dev Cloud</title>
     </head>
     <body class="body" id="home">
+
+        <div class="preloader" id="preloader"></div>
     
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
@@ -43,7 +46,7 @@
         
         <div class="jumbotron jumbotron-fluid">
             <div class="container text-center pt-5">
-                <img data-aos="zoom-in" data-aos-duration="1000" src="img/profile.jpeg" width="25%" class="rounded-circle img-thumbnail">
+                <img data-aos="zoom-in" data-aos-duration="1000" src="img/profile-pic.png" width="25%" class="rounded-circle img-thumbnail">
                 <h1 class="display-4" data-aos="fade-up" data-aos-duration="1000">Dev Cloud</h1>
                 <p class="lead" data-aos="fade-up" data-aos-duration="1500">Welcome to Dev Cloud</p>
             </div>
@@ -228,5 +231,17 @@
               .catch(error => console.error('Error!', error.message))
           })
         </script>
+
+        <script>
+
+            var loader = document.getElementById("preloader");
+            window.addEventListener("load", function(){
+
+                loader.style.display="none";
+
+            })
+
+        </script>
+
     </body>
     </html>
