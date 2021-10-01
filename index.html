@@ -30,7 +30,7 @@
 
         <div class="preloader" id="preloader"></div>
     
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand text-white">Dev Cloud</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -157,23 +157,19 @@
                   </div>
                     <form name="dev-clouds-messages">
                         <div class="form-group">
-                          <label for="nama">Name</label>
-                          <input type="text" class="form-control" id="nama" name="nama" required>
+                          <input type="text" class="form-control" id="nama" name="nama" Placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                           </div>
                           <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="number" class="form-control" id="phone" name="phone" required>
+                            <input type="number" class="form-control" id="phone" name="phone" Placeholder="Phone" required>
                           </div>
                         <div class="form-group">
-                            <label for="phone">Message</label>
-                            <textarea name="pesan" id="pesan" class="form-control" required></textarea>
+                            <textarea name="pesan" id="pesan" class="form-control" Placeholder="Message" required></textarea>
                         </div>
                         <div class="form-group">
-                                <button type="submit" class="btn btn-info btn-kirim">Send Message</button>
+                                <button type="submit" class="btn btn-info btn-kirim">Send Message<i class="bi bi-telegram"></i></button>
                                 <button class="btn btn-info btn-loading d-none" type="button" disabled>
                                   <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                                   Loading...
@@ -186,7 +182,7 @@
         </div>
     </section>
 
-    <footer class="bg-info text-white">
+    <footer class="bg-dark text-white">
         <div class="container">
             <div class="row text-center">
                 <div class="col pt-3">

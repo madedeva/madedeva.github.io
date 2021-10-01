@@ -12,6 +12,13 @@ section{
 html{
     scroll-behavior: smooth;
 }
+.navbar-nav i{
+    margin-right: 5px;
+}
+.btn i{
+    margin-left: 5px;
+}
+
 @media (min-width: 992px) {
     .nav-link{
         margin-right: 30px;
