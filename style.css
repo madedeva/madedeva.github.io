@@ -18,7 +18,9 @@ html{
 .btn i{
     margin-left: 5px;
 }
-
+.card .btn{
+    border-radius: 20px;
+}
 @media (min-width: 992px) {
     .nav-link{
         margin-right: 30px;
